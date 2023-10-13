@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 h1 {
   font-size: 48px;
@@ -9,7 +10,7 @@ h1 {
   line-height: 58px;
 }
 h2 {
-  font-size: 40px;
+  font-size: 50px;
   font-weight: 600;
   line-height: 40px;
   text-align: center;
@@ -33,7 +34,7 @@ h3 {
   font-size: 30px;
 }
 .services,
-.works,
+.first-season_section,
 .team .blog,
 .contact,
 .footer {
@@ -46,6 +47,9 @@ body {
 header {
   height: 65px;
   background-color: #232323;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 header .main-wrapper {
   display: flex;
@@ -59,7 +63,7 @@ header .main-wrapper {
   margin: 0 auto;
   padding: 0 15px;
   width: 1170px;
-  height: 100%;
+  /* height: 100%; */
 }
 .logotype {
   cursor: pointer;
@@ -74,6 +78,7 @@ header .main-wrapper {
 
 .main-menu ul > li {
   display: inline-block;
+  text-transform: uppercase;
 }
 
 .main-menu ul > li > a {
@@ -222,33 +227,16 @@ header .main-wrapper {
   width: 150px;
   height: 150px;
   border-radius: 100%;
-  filter: grayscale(80%);
+  filter: grayscale(90%);
   transition-duration: 0.5s;
 }
 
-.profile-photo:hover {
-  filter: grayscale(10%);
-}
-
-.narimage:hover {
-  box-shadow: 0px 2px 100px 0px #ff9500b8;
-  border: 2px solid #ff95007e;
-}
-.sakimage:hover {
-  box-shadow: 0px 2px 100px 0px #ff00fbb8;
-  border: 2px solid #ff00fbb8;
-}
-.sasimage:hover {
-  box-shadow: 0px 2px 100px 0px #0080ffb8;
-  border: 2px solid #0080ffb8;
-}
 .box-icon {
   padding-bottom: 30px;
 }
 .services__block-item {
   display: flex;
   margin-top: 50px;
-
   justify-content: space-between;
 }
 
@@ -257,7 +245,7 @@ header .main-wrapper {
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 30px;
   flex: 0 0 32%;
   text-align: center;
   transition-duration: 0.35s;
@@ -266,6 +254,24 @@ header .main-wrapper {
 .services__item:hover {
   box-shadow: 0px 2px 10px 0px #49494961;
 }
+.services__item:hover .box-icon .narimage {
+  filter: grayscale(10%);
+  box-shadow: 0px 2px 100px 0px #ff9500b8;
+  border: 2px solid #ff95007e;
+}
+
+.services__item:hover .box-icon .sakimage {
+  filter: grayscale(10%);
+  box-shadow: 0px 2px 100px 0px #ff00fbb8;
+  border: 2px solid #ff00fbb8;
+}
+
+.services__item:hover .box-icon .sasimage {
+  filter: grayscale(10%);
+  box-shadow: 0px 2px 100px 0px #0080ffb8;
+  border: 2px solid #0080ffb8;
+}
+
 .services__item > p {
   font-size: 15px;
   letter-spacing: 2px;
@@ -274,18 +280,92 @@ header .main-wrapper {
 
 .services__item > a {
   display: block;
-  color: rgb(108, 108, 108);
+  color: rgb(69, 69, 69);
   text-decoration: none;
   letter-spacing: 1px;
   font-weight: 400;
   font-size: 15px;
-  border: 1px solid gray;
+  border: 1px solid rgb(69, 69, 69);
   padding: 10px;
   border-radius: 90px;
   width: 150px;
   transition-duration: 0.3s;
 }
 .services__item > a:hover {
-  background-color: gray;
+  background-color: #444444;
   color: white;
+  font-weight: bold;
+  box-shadow: 0px 5px 11px 0px #2a2a2a;
+}
+
+.first-season_section {
+  background: url(./images/firstseasonbckg8.jpg) center center/cover no-repeat;
+  position: relative;
+  width: 100%;
+}
+
+.first-season_section .main-wrapper {
+  height: 100%;
+  justify-content: space-between;
+}
+
+.first-season_section .main-wrapper > div {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.first-season_container {
+  align-self: flex-start;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  width: 60%;
+}
+
+.first-season-img {
+  height: 40%;
+  width: 40%;
+  filter: grayscale(60%);
+  opacity: 0.8;
+}
+
+.first-season_section .main-wrapper > h2 {
+  margin-bottom: 30px;
+  color: white;
+}
+.first-season_container > h3 {
+  color: white;
+  text-shadow: 0px 0px 12px #000000;
+}
+.first-season_container > p {
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: white;
+  font-size: 15px;
+  text-shadow: 0px 0px 12px #000000;
+}
+
+.first-season_section > h2::after {
+  color: white;
+}
+
+.first-season_section h2 > span::after {
+  background: white;
+}
+
+.first-season_container > ul {
+  /* align-self: center; */
+  /* text-align: center; */
+  text-shadow: 0px 0px 12px #000000;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: white;
+  list-style-type: square;
+  list-style-position: inside;
 }
