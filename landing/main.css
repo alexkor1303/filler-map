@@ -33,6 +33,34 @@ h3 {
   padding-bottom: 30px;
   font-size: 30px;
 }
+@keyframes anim-of-list {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+
+  15% {
+    transform: translateX(-30px) rotate(6deg);
+  }
+
+  30% {
+    transform: translateX(15px) rotate(-6deg);
+  }
+
+  45% {
+    transform: translateX(-15px) rotate(3.6deg);
+  }
+
+  60% {
+    transform: translateX(9px) rotate(-2.4deg);
+  }
+
+  75% {
+    transform: translateX(-6px) rotate(1.2deg);
+  }
+}
+
 .services,
 .first-season_section,
 .team .blog,
@@ -299,9 +327,21 @@ header .main-wrapper {
 }
 
 .first-season_section {
-  background: url(./images/firstseasonbckg8.jpg) center center/cover no-repeat;
+  background: url(./images/firstseasonbckg8.jpg) no-repeat;
+  background-size: cover;
   position: relative;
   width: 100%;
+  z-index: 2;
+}
+.first-season_section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #5454546a;
 }
 
 .first-season_section .main-wrapper {
@@ -341,9 +381,9 @@ header .main-wrapper {
   text-shadow: 0px 0px 12px #000000;
 }
 .first-season_container > p {
+  line-height: 2;
   letter-spacing: 1px;
   font-weight: bold;
-  margin-bottom: 30px;
   color: white;
   font-size: 15px;
   text-shadow: 0px 0px 12px #000000;
@@ -357,15 +397,34 @@ header .main-wrapper {
   background: white;
 }
 
-.first-season_container > ul {
-  /* align-self: center; */
-  /* text-align: center; */
-  text-shadow: 0px 0px 12px #000000;
-  letter-spacing: 2px;
+.first-season_series-list {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+  letter-spacing: 1px;
   font-weight: bold;
-  font-size: 30px;
-  margin-bottom: 30px;
   color: white;
-  list-style-type: square;
-  list-style-position: inside;
+  font-size: 15px;
+  text-shadow: 0px 0px 12px #000000;
+  position: relative;
+}
+.first-season_series-list > ul > li {
+  list-style: none;
+  padding-top: 10px;
+}
+
+.first-season_series-list > ul > li > a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+  padding: 0 10px;
+  border-radius: 100px;
+}
+
+.first-season_series-list > ul > li > a:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 5px #ffffff;
+  color: rgba(248, 135, 64, 0.843);
+  background-color: rgba(255, 255, 255, 0.726);
+  border-radius: 100px;
 }
