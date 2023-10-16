@@ -33,37 +33,11 @@ h3 {
   padding-bottom: 30px;
   font-size: 30px;
 }
-@keyframes anim-of-list {
-  0%,
-  100% {
-    transform: translateX(0%);
-    transform-origin: 50% 50%;
-  }
-
-  15% {
-    transform: translateX(-30px) rotate(6deg);
-  }
-
-  30% {
-    transform: translateX(15px) rotate(-6deg);
-  }
-
-  45% {
-    transform: translateX(-15px) rotate(3.6deg);
-  }
-
-  60% {
-    transform: translateX(9px) rotate(-2.4deg);
-  }
-
-  75% {
-    transform: translateX(-6px) rotate(1.2deg);
-  }
-}
 
 .services,
 .first-season_section,
-.team .blog,
+.other-teams_section,
+.blog,
 .contact,
 .footer {
   padding: 60px 0;
@@ -327,8 +301,8 @@ header .main-wrapper {
 }
 
 .first-season_section {
-  box-shadow: 0px 8px 2 7px 0px #000000 inset;
   background: url(./images/firstseasonbckg8.jpg) no-repeat;
+  box-shadow: 0px 7px 22px 0px #000000 inset;
   background-size: cover;
   position: relative;
   width: 100%;
@@ -336,12 +310,13 @@ header .main-wrapper {
 }
 .first-season_section::after {
   content: "";
-
   z-index: -1;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  position: absolute;
+  box-shadow: 0px -7px 22px 0px #000000 inset;
   background-color: #5454546a;
 }
 
@@ -374,7 +349,7 @@ header .main-wrapper {
 .first-season_container > h3 {
   color: white;
   text-shadow: 0px 0px 12px #000000;
-  padding-right: 250px;
+  padding-right: 200px;
 }
 .first-season_container > p {
   line-height: 2;
@@ -413,6 +388,7 @@ header .main-wrapper {
   margin-top: 10px;
   padding: 0 10px;
   border-radius: 100px;
+  transition-duration: 0.3s;
 }
 
 .first-season_series-list > ul > li > a:hover {
@@ -423,3 +399,203 @@ header .main-wrapper {
   border-radius: 100px;
   padding: 10px;
 }
+
+.other-teams_section {
+  background: white;
+  background-size: cover;
+  position: relative;
+}
+
+.other-teams_list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  justify-content: center;
+}
+
+.other-teams_block {
+  display: block;
+  flex-direction: column;
+  width: 25%;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px 1px #00000061;
+  border-radius: 10px;
+  margin: 0 30px 50px 30px;
+  text-align: center;
+  transition: 0.8s;
+}
+.team-card_name {
+  font-size: 20px;
+  text-transform: lowercase;
+  font-weight: bold;
+  padding: 10px 0 20px 0;
+}
+
+.team-card_photo {
+  width: 160px;
+  height: 150px;
+  border-radius: 10px 10px 10px 10px;
+  filter: grayscale(40%);
+  margin-bottom: 20px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-card_discription {
+  font-size: 10px;
+  padding: 0 10px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.team-card_composition {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.other-teams_block .card-face-two .card-face-two_content > ul {
+  margin-bottom: 15px;
+}
+.other-teams_block .card-face-two .card-face-two_content > ul > li {
+  font-size: 10px;
+  padding: 0 10px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+  letter-spacing: 1px;
+  list-style: none;
+}
+
+.card-face-one {
+  height: 200px;
+  transition: 1.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(30px);
+}
+.other-teams_block:hover {
+  display: flex;
+  height: 600px;
+}
+.other-teams_block:hover .card-face-one {
+  transform: translateY(0);
+}
+
+.card-face-two {
+  transition: 1.2s;
+  opacity: 0;
+  display: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  transform: translateY(-200px);
+}
+
+.other-teams_block:hover .card-face-two {
+  transform: translateY(0px);
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-face-one-logo {
+  width: 160px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.7;
+}
+.second-season {
+  position: relative;
+  background: url(./images/backgroundteamsend.jpg) no-repeat;
+  box-shadow: 0px 7px 22px 0px #000000 inset;
+  background-size: cover;
+  position: relative;
+}
+
+.second-season .main-wrapper {
+  align-items: center;
+  padding: 60px 0;
+}
+.second-season .main-wrapper > div:first-of-type {
+  position: relative;
+}
+.second-season .main-wrapper > h2 {
+  color: white;
+  text-shadow: 0px 0px 10px #000000;
+}
+.second-season h2 > span::after {
+  background: white;
+  box-shadow: 0px 0px 3px #000000;
+}
+.second-season_container {
+  display: flex;
+  padding-top: 100px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.second-season-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.second-season-content > h3 {
+  color: white;
+  text-shadow: 0px 0px 10px #000000;
+  padding-right: 200px;
+}
+
+.second-season-content > p {
+  line-height: 2;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: white;
+  font-size: 15px;
+  text-shadow: rgb(255, 255, 255) 0px 0px 12px;
+}
+
+.second-season_series-list > ul > li {
+  font-weight: bold;
+  list-style: katakana-iroha inside;
+  color: rgb(132, 0, 255);
+  text-shadow: 0px 0px 10px white;
+  padding-top: 10px;
+}
+
+.second-season_series-list > ul > li > a {
+  text-decoration: none;
+  color: white;
+  margin-top: 10px;
+  padding: 0 10px;
+  border-radius: 100px;
+  transition-duration: 0.3s;
+}
+
+.second-season_series-list > ul > li > a:hover {
+  cursor: pointer;
+  text-shadow: 0px 0px 5px #ffffff;
+  color: rgba(193, 64, 248, 0.843);
+  background-color: rgba(255, 255, 255, 0.726);
+  border-radius: 100px;
+  padding: 10px;
+}
+
+.second-season_container > img {
+  width: 260px;
+  height: 350px;
+  filter: grayscale(60%);
+  opacity: 0.8;
+  outline: 5px solid wheat;
+  border: 1px solid rgb(83, 76, 61);
+}
+
