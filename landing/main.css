@@ -34,6 +34,22 @@ h3 {
   font-size: 30px;
 }
 
+@keyframes shows {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+@keyframes hidden {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
 .services,
 .first-season_section,
 .other-teams_section,
@@ -380,6 +396,7 @@ header .main-wrapper {
 .first-season_series-list > ul > li {
   list-style: katakana-iroha inside;
   padding-top: 10px;
+  color: rgb(255, 102, 0);
 }
 
 .first-season_series-list > ul > li > a {
@@ -394,7 +411,7 @@ header .main-wrapper {
 .first-season_series-list > ul > li > a:hover {
   cursor: pointer;
   text-shadow: 0px 0px 5px #ffffff;
-  color: rgba(248, 135, 64, 0.843);
+  color: rgb(255, 102, 0);
   background-color: rgba(255, 255, 255, 0.726);
   border-radius: 100px;
   padding: 10px;
@@ -540,13 +557,14 @@ header .main-wrapper {
 .second-season_container {
   display: flex;
   padding-top: 100px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 .second-season-content {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  transition: 3s;
 }
 
 .second-season-content > h3 {
@@ -563,7 +581,15 @@ header .main-wrapper {
   font-size: 15px;
   text-shadow: rgb(255, 255, 255) 0px 0px 12px;
 }
-
+.second-season_series-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 50px;
+}
+.second-season_series-list > ul {
+  padding-right: 50px;
+}
 .second-season_series-list > ul > li {
   font-weight: bold;
   list-style: katakana-iroha inside;
@@ -579,6 +605,7 @@ header .main-wrapper {
   padding: 0 10px;
   border-radius: 100px;
   transition-duration: 0.3s;
+  text-shadow: 0px 0px 10px rgb(0, 0, 0);
 }
 
 .second-season_series-list > ul > li > a:hover {
@@ -589,13 +616,39 @@ header .main-wrapper {
   border-radius: 100px;
   padding: 10px;
 }
+.img-containter {
+  position: relative;
+}
 
-.second-season_container > img {
+.jiraya-photo {
   width: 260px;
   height: 350px;
   filter: grayscale(60%);
-  opacity: 0.8;
+  /* opacity: 0.8; */
   outline: 5px solid wheat;
   border: 1px solid rgb(83, 76, 61);
 }
 
+.fukaku-cypher {
+  transition-duration: 2s;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  opacity: 0.7;
+  font-size: 50px;
+  text-align: justify;
+  letter-spacing: 5px;
+  color: white;
+  text-shadow: 1px 0 1px #64646482, 0 1px 1px #64646482, -1px 0 1px #64646482,
+    0 -1px 1px #64646482;
+  line-height: 1.5;
+}
+
+.img-containter:hover .fukaku-cypher {
+  transition-duration: 2s;
+  display: block;
+  animation: shows 2s;
+}
