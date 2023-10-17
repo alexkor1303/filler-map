@@ -42,14 +42,7 @@ h3 {
     opacity: 0.8;
   }
 }
-@keyframes hidden {
-  from {
-    opacity: 0.8;
-  }
-  to {
-    opacity: 0;
-  }
-}
+
 .services,
 .first-season_section,
 .other-teams_section,
@@ -74,9 +67,7 @@ header .main-wrapper {
   justify-content: space-between;
   align-items: center;
 }
-.bb {
-  border: 1px solid red;
-}
+
 .main-wrapper {
   margin: 0 auto;
   padding: 0 15px;
@@ -431,6 +422,7 @@ header .main-wrapper {
 }
 
 .other-teams_block {
+  overflow: hidden;
   display: block;
   flex-direction: column;
   width: 25%;
@@ -651,4 +643,43 @@ header .main-wrapper {
   transition-duration: 2s;
   display: block;
   animation: shows 2s;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-content > h2 {
+  padding-bottom: 20px;
+  color: rgb(32, 32, 32);
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+.footer-content > h3 {
+  padding: 30px 0 20px;
+  color: rgb(32, 32, 32);
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.social-media-links {
+  justify-content: space-between;
+  display: flex;
+  width: 15%;
+  padding-bottom: 20px;
+}
+.social-media-links > a > i {
+  justify-content: space-between;
+  font-size: 30px;
+  color: rgb(32, 32, 32);
+
+  width: 26px;
+  transition-duration: 0.3s;
+}
+
+.social-media-links > a > i:hover {
+  transform: translate(0px, -5px);
+  color: rgb(255, 145, 0);
+  width: 26px;
+  transition-duration: 0.3s;
 }
